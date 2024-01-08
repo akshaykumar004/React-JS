@@ -1,0 +1,71 @@
+//--------------------------- Day-2 , 8 Jan 2024 --------------------------------
+
+--------------------Comparison with create react app and vite react app -------------------
+
+First deleting some files in both project to make the project easy to understand.. mostly it will be CSS and logo ..
+
+delete their dependencies in app.jsx/js and main.jsx/js
+
+---------------================= Analysis of Create-React-App  =========================================--------
+
+Ignore build folder and node_module folder. bcz build folder is for build purpose during devlopment of app.
+and node_module folder contains all the dependencies which are present in package.json of app.
+package-lock-json folder - all the stable version of dependencies will be locked in this folder means this will be run on these versions only.
+
+manifest.json - used for mobile user. used to see metatags of website 
+robots.txt  - it is for search engine..
+index.html - this is responsible for page loading.
+
+<noscript>You need to enable JavaScript to run this app.</noscript> 
+this tag will give a msg like you've to enable JS to run the app in browser.
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>        // StrictMode is for safe purpose in devlopment env. you can run code without this also.
+    <App />
+  </React.StrictMode>
+);
+
+ReactDOM will create a virtual DOM and store in root variable. createRoot is a component or element . 
+root will render app.js using react-scripts. it is adding all the scripts and html to JS and making html run with JS.
+
+Render() -  in React is a crucial method that defines what should be displayed by a component. It returns a description of 
+the UI elements to be rendered, and React takes care of updating the actual DOM based on the changes in the virtual DOM.
+
+
+---------------================= Analysis of Vite-React-App  =========================================--------
+
+in Vite project.json no react-scripts are there so how index.html will add into our js ?
+if you notice in vite-react app index.html file is outside of folder but in create-react-app it is under public folder.
+
+so goto index.html - it is adding directly <script type="module" src="/src/main.jsx"></script> in this file.
+so we dont need to add script to run html with js. it is happening in index.html itself.
+
+if you notice basicreactapp index.js and vitereactapp main.jsx is same just small diffrence is in basicreactapp first storing
+into a variable and then applying render and in vite directly calling render using (.)
+naming convention is diffrent but it is same only. you can choose both JS or JSX 
+
+doubt - app.jsx is rending in main.jsx so can we rend any other file in app.jsx or main.jsx
+make one file jsx file  under src folder
+
+Note - Always give file name extension jsx otherwise you'll get error 
+** Failed to parse source for import 
+analysis because the content contains invalid JS syntax. If you are using JSX, make sure to name the file with the .jsx or .tsx extension.
+
+also function name should be start from capital letter otherwise you'll get below error
+
+** Warning: The tag <render> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+
+If you're rending any component then you can return only one component at a time
+but if you want to return multiple then you've to use any tag under which you can pass multiple element like 
+<div> ....</div> so avoid this multiple times 
+
+we can write directly <> </> empty tag. it is called fragment is React.
+
+////////////////////////////////-------------------------------
+
+In Create-React-App file name extension is not mandatory for JSX. but function name should be start by capital letter.
+
+but for better practice - if html is returning then give file name by .jsx and if not the .js is fine. --- in Create-React-App
+
+index.js or main.jsx is just a default file name.. you can give any file name..
