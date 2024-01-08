@@ -1,0 +1,152 @@
+//---------------------------------------- Day-1, 7 Jan 2024-------------------------------------
+
+Doc Link -- https://react.dev/learn/start-a-new-react-project
+
+React is a popular JavaScript library used for building user interfaces (UIs).
+Developed by Facebook, React allows developers to create dynamic and interactive UIs efficiently.
+
+It has two modules - 
+In the React library, ReactDOM and React Native are two separate modules that help render React components in different environments.
+
+ReactDOM:
+ReactDOM is a package/module that provides DOM-specific methods that React uses to interact with the DOM (Document Object Model). 
+It's used when you're building web applications with React.
+
+React Native:
+React Native is a separate but related framework built on top of React. It allows you to build mobile applications using React syntax.
+React Native uses native components instead of web components to build mobile user interfaces. It allows you to create mobile apps 
+that run on iOS and Android devices, using JavaScript and React.
+
+============================== What is npx and npm =========================================
+
+npm (Node Package Manager):
+npm is a package manager for JavaScript and Node.js. It comes bundled with Node.js installation. It's used to install, manage, and 
+share reusable code packages/modules or libraries for JavaScript and Node.js projects.
+Developers use npm to install packages from the npm registry, which is a repository for open-source JavaScript packages. 
+It also allows you to manage project dependencies by specifying them in a package.json file.
+
+npx (Node Package Runner):
+npx is a tool that comes with npm version 5.2.0 & above. It is used to execute Node.js packages without having to install them globally or locally.
+It allows you to run packages as if they were installed globally without actually installing them. This is particularly useful for running packages
+that you don't want to install permanently or that you want to try out without polluting your project's dependencies.
+
+-----------------------------------------------------------------------------------------
+
+Key Differences:-
+
+npm primarily manages packages. It installs packages locally in your project or globally on your system. You use it to install and manage 
+dependencies for your projects.
+With npm, you install packages like below:
+
+npm install package-name        // This command installs a package in your project, adding it to your package.json file.
+
+-------------------------------------------
+
+npx is a tool for running packages. It comes bundled with npm, and it allows you to execute commands from npm packages without installing them 
+permanently. It's handy for running one-off commands or executables.
+
+With npx, you run packages without installing them:
+
+npx package-name                // This command runs a package without the need for a prior installation. 
+
+It fetches the latest version, executes the command, and then discards it.
+
+================================================ First React App =====================================================================
+
+In React JS we'll use npx only..
+Open Terminal - type npx create-react-app 01basicreactapp       //01basicreactapp is just folder Name. you can give anyname
+
+****here we're using create-react-app method to create react app..***
+
+it will take some time. after installation you can run using this command - cd 01basicreactapp
+means change directory to 01basicreactapp - 
+
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files    
+    and scripts into the app directory. If you do this, you can’t go back! 
+
+--------------------------------------
+
+Once you'll run - npm start or npm run start command it will generate two link through which you can open your project
+
+Exp - 
+Compiled successfully!
+
+You can now view 01basicreactapp in the browser. 
+
+  Local:            http://localhost:3000        
+  On Your Network:  http://192.168.1.49:3000 
+
+-------------------------------------------------------------------------------------
+Inside 01basicreactapp - below dir should be present and if package.json is present then we can run all scripts..
+command to check this dir -> cd 01basicreactapp dir
+Directory: C:\Users\77079\OneDrive\Documents\React-JS\01basicreactapp    
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----          1/7/2024   5:43 PM                node_modules
+d-----          1/7/2024   5:35 PM                public
+d-----          1/7/2024   5:35 PM                src
+-a----          1/7/2024   5:33 PM            310 .gitignore
+-a----          1/7/2024   5:36 PM         711568 package-lock.json
+-a----          1/7/2024   5:36 PM            818 package.json
+-a----          1/7/2024   5:34 PM           3359 README.md
+
+
+Goto Package.json ---
+we can see name our project and version of react.
+--dependencies -
+some testing libraries and --
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",   // using this we can execute command
+    "web-vitals": "^2.1.4"      // performance measurement
+
+-- scripts --
+start , build , test , eject(means we can eject react lib from any project saying like, this amount of work was for react and can work on other lib)
+
+-- eslintConfig --
+sometimes we see a yellow dot on any piece of code for improvement. means it will not be an error but we can make that better using suggestion
+
+--browserlist --
+can see which browser support for development
+
+after running npm run build command one build folder will be create..
+
+---------------------------------- React Project Using Vite --------------------------------------
+Doc Link - https://vitejs.dev/guide/
+
+Now we're going to create react app using vite lib...
+
+open terminal - in React-JS folder - type npm create vite@latest
+PS C:\Users\77079\OneDrive\Documents\React-JS> npm create vite@latest
+Need to install the following packages:
+create-vite@5.1.0
+Ok to proceed? (y) y
+√ Project name: ... 01vitereactapp
+√ Select a framework: » React
+√ Select a variant: » JavaScript
+
+Scaffolding project in C:\Users\77079\OneDrive\Documents\React-JS\01vitereactapp...
+
+Done. Now run:
+
+  cd 01vitereactapp     // for going this directory to execute command
+  npm install           // this will create required Packages (node_modules folder)
+  npm run dev           // for executing project..
+
+after executing npm run dev project url will be create..
+VITE v5.0.11  ready in 942 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
