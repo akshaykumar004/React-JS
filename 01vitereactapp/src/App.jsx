@@ -2,15 +2,15 @@
 import Render from "./chai"     // import just like app.jsx in main.jsx
 
 function App() {
+  const variable = 'Varibale'
   return (
     <>
-      <div>
-        <h1>First React App Using Vite</h1>
-        <Render />
-        
+      
+      <div> <h1>First React App Using Vite</h1> 
       </div>
-
-      <h1>Vite + React</h1>
+      <Render />
+      <h1>Vite + React | {variable} </h1>
+      
       
     </>
   )
