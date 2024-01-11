@@ -1,0 +1,64 @@
+----------------------- Day-3 10th Jan 2024 -------------------------
+
+//---------------- Custom React App - Own React Library and JSX ---------------------------------
+
+1- First create a folder called customrReact
+
+2- Create one index.html file and one .js file. In index.html file define one div just like default react app using "id = root"
+    and define one script tag inside call .js file just like we're calling main.jsx file in index.html file in default reactapp.
+
+3 - in main.jsx were rendering App.jsx in which one fun was defined that is returning html tag or any other functionality which we want as o/p.
+
+4 - Now in .js file create custom element whcih you want to render in "id = root" or in index.html - <div>
+
+    1 -  we're fetching <div> using id 'root' and storing into a variable called mainContainer
+    2 - after that declaring one element called reactElement which will accect three parameter
+        a - tag
+        b - object properties
+        c - Children element
+    so we're declaring reactElement using these three parameter.
+
+    3 - Now we've to render reactElement so for that we've to declare one method which we will render reactElement and will add in mainContainer
+        for that declaring one method/function called customrRender. this will accect two values - reactElement and container
+    4 - creating one domElement in which will set innerHTML and attributes which we want to render..
+    5 - Now in container will append domElement so that it could render and add into mainContainer.
+    6 - Now calling customrRender method(reactElement , mainContainer) it wil render element(reactElement) and will add into mainContainer(div)
+    7 - For better approach using forin loop .. rest all everything is same..
+
+
+----Now See Vite Project main.jsx for better understanding how react works behind the scene..-------------- 
+
+in main.jsx created function MyApp() also it works like reactElement and it break into tree structure / object.
+so ques is if it is parsing into object at the end so can we declare it into object directly and skip one step.
+
+Ans is NO .. bcz react dont follow this method. we cant declare syntax like this. React will not accect this bcz it has own predefined syntax.
+
+bcz in myreact.js we're declaring our own method to render the argument / function but here React method is using so own React method 
+which takes particularly predefined type of syntax and all..and if you render a fun then it will parse into onject and will take value 
+according to requirement.
+
+now we can see RunElement is working bcz it is returning into correct syntax. React lib will accept this.
+
+but previous ReactElement is not working bcz of incorrect syntax. we're declaring as per our requirement.
+
+2nd time ReactElement will work bcz it is defining into proper syntax. since React lib has its
+predefined syntax and it is defined in that way so it is working. we're creating using React.createElement for its predefined syntax
+It accect three parameters. ---
+First parameter - it will accect any tag like <p> or <h1> or anything so we're giving <a> for link
+Second parameter - object. you can leave as empty but it is necessory to declare
+Third parameter - Child element .. direct text which you want to show..
+
+//------------------------- How to declare variable --------------------------
+
+see app.jsx and main.jsx
+
+app.jsx  --  we declaring a variable and calling inside {} bcz it wokrs like this only.
+without {} we cant call it..
+
+main.jsx  -- after declaring var we're calling inside React.createElement after 3rd parameter
+
+here we cant define any conditional or evaluational expression inside this bcz it accect only after evaluational expression argument.
+
+exp - in obj {
+    we cant declare here if else or forloop.. it is not correct syntax like that we cant declare any evaluational expression in return ()
+}
