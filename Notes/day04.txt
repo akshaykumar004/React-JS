@@ -1,0 +1,87 @@
+//--------------------------------------- Day-4 12th Jan 2024 -------------------------
+
+------------------------ Tailwind CSS -------------------
+
+How to use ---------
+
+Goto - https://tailwindcss.com/docs/installation    -> Framework Guides -> choose framework - Vite
+Choose Using React  -> Follow step by step
+
+---------------------------------------Step - 1 ------------------------
+Follow this step if you haven't created your project using vite@latest
+
+--- Create your project 
+Start by creating a new Vite project if you don’t have one set up already. The most common approach is to use Create Vite.
+npm create vite@latest my-project -- --template react
+cd my-project
+
+-------------------------------------- Step - 2 -----------------------
+----  Install Tailwind CSS 
+Install tailwindcss and its peer dependencies, then generate your tailwind.config.js and postcss.config.js files.
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+
+-------------------------------------- Step - 3 -----------------------------
+---- Configure your template paths 
+Add the paths to all of your template files in your tailwind.config.js file.
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+
+--------------------------------------- Step - 4  -----------------------
+---- Add the Tailwind directives to your CSS 
+Add the @tailwind directives for each of Tailwind’s layers to your ./src/index.css file.
+
+At the top of index.css
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+-------------------------------------- Step - 5 ----------------------------
+
+Start your build process
+Run your build process with npm run dev.
+
+npm run dev
+
+Step - 6 
+Start using Tailwind in your project
+Start using Tailwind’s utility classes to style your content.
+
+export default function App() {
+  return (
+    <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
+  )
+}
+
+so in app.jsx file you can see so many tailwind css is using.. 
+for exp - className="text-lg font-medium" , className="text-slate-700 dark:text-slate-500"
+className="pt-6 md:p-8 text-center md:text-left space-y-4" etc.. it is same like css only.just class changed to className
+
+------------------------------ Props ----------------------
+
+props - properties
+
+suppose there is card and you want to use multiple times so you can use component and put that code into component which will return card 
+and you call component multiple times when required.
+
+Goto - https://www.devui.io/   --> component --> cards  - select first card component
+
+so to make component  - make a component folder under src folder  --> make a file Card.jsx
+
+now you can call this card maultipe times anywhere. just import and call in app.jsx or main.jsx
+

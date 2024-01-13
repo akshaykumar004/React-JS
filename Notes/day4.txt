@@ -1,0 +1,51 @@
+===================================== Day-4,  12 Jan 2024 ======================================
+
+doc link ----  https://github.com/acdlite/react-fiber-architecture
+
+-----------------------------------React Fiber Architecture -------------------------------------
+
+Introduction :- React Fiber is an ongoing reimplementation of React's core algorithm. It is the culmination of over two years of research 
+by the React team.
+
+The goal of React Fiber is to increase its suitability for areas like animation, layout, and gestures. Its headline feature is incremental 
+rendering: the ability to split rendering work into chunks and spread it out over multiple frames.
+
+Other key features include the ability to pause, abort, or reuse work as new updates come in; the ability to assign priority to different 
+types of updates; and new concurrency primitives.
+
+
+----------------------------------------What is reconciliation? ------------------------------
+
+reconciliation ia a algorithm which React uses to differenciate one tree with another to determine which parts need to be changed.
+
+Reconciliation is the algorithm behind what is popularly understood as the "virtual DOM." A high-level description goes something like this: 
+when you render a React application, a tree of nodes that describes the app is generated and saved in memory. This tree is then flushed to the 
+rendering environment — for example, in the case of a browser application, it's translated to a set of DOM operations. When the app is 
+updated (usually via setState), a new tree is generated. The new tree is diffed with the previous tree to compute which operations are needed to 
+update the rendered app.
+
+
+----------------------------Reconciliation versus rendering --------------------------------
+
+The DOM is just one of the rendering environments React can render to, the other major targets being native iOS and Android views via React Native. (This is why "virtual DOM" is a bit of a misnomer.)
+
+The reason it can support so many targets is because React is designed so that reconciliation and rendering are separate phases. T
+he reconciler does the work of computing which parts of a tree have changed; the renderer then uses that information to actually update the 
+rendered app.
+
+This separation means that React DOM and React Native can use their own renderers while sharing the same reconciler, provided by React core.
+
+
+------------------------------------- What is a fiber? -----------------------------------------------
+
+We're about to discuss the heart of React Fiber's architecture. Fibers are a much lower-level abstraction than application developers 
+typically think about. If you find yourself frustrated in your attempts to understand it, don't feel discouraged. Keep trying and it will 
+eventually make sense. (When you do finally get it, please suggest how to improve this section.)
+
+
+We've established that a primary goal of Fiber is to enable React to take advantage of scheduling. Specifically, we need to be able to
+
+pause work and come back to it later.
+assign priority to different types of work.
+reuse previously completed work.
+abort work if it's no longer needed.
