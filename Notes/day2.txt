@@ -6,7 +6,7 @@ First deleting some files in both project to make the project easy to understand
 
 delete their dependencies in app.jsx/js and main.jsx/js
 
----------------================= Analysis of Create-React-App  =========================================--------
+====================================== Analysis of Create-React-App  ============================================
 
 Ignore build folder and node_module folder. bcz build folder is for build purpose during devlopment of app.
 and node_module folder contains all the dependencies which are present in package.json of app.

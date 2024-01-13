@@ -1,6 +1,6 @@
 ----------------------- Day-3 10th Jan 2024 -------------------------
 
-//---------------- Custom React App - Own React Library and JSX ---------------------------------
+//---------------------- Custom React App - Own React Library and JSX ---------------------------------
 
 1- First create a folder called customrReact
 

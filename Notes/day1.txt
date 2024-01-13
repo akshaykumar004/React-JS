@@ -1,6 +1,6 @@
 //---------------------------------------- Day-1, 7 Jan 2024-------------------------------------
 
-Doc Link -- https://react.dev/learn/start-a-new-react-project
+Doc Link --- https://react.dev/learn/start-a-new-react-project
 
 React is a popular JavaScript library used for building user interfaces (UIs).
 Developed by Facebook, React allows developers to create dynamic and interactive UIs efficiently.
