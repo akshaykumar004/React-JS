@@ -33,9 +33,9 @@ function App() {
 
 
     const copyPasswordToClipboard = useCallback(() => {
-    passwordRef.current?.select();                          // will check current password has any value or not then select
-    passwordRef.current?.setSelectionRange(0, 10);          // this will select range of password.
-    window.navigator.clipboard.writeText(password)          // this will copy password into clipboard
+    passwordRef.current?.select();                     // will check current password has any value or not then select password
+    passwordRef.current?.setSelectionRange(0, 10);     // this will select range of password.
+    window.navigator.clipboard.writeText(password)     // this will copy password into clipboard
     }, [password])
 
   //useEffect(fn , []) hook   // useEffect accept one fun() and dependencies..
