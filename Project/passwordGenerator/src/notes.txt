@@ -13,29 +13,35 @@ Now UI is done..........
 
 Step -2 - behind the scene----
 
-define 4 useState through which we will work on functionality of Password.
+define 4 useState/variable through which we will work on functionality of Password.
 length , Number , Character and Password
 
 length - default is 6 and max is 10...
 Number - After selecting this checkbox password will update including Number
 Character - After selecting this checkbox password will update including Character
-password - will store password and show through this..
+password - will store password and show ..
 
 Step - 3-------------- For process optimization
 
-define useCallBack() hook which will Generate password and store into setpassword
+define one passwordGenerator method which have all logic of password Generator. check all condition and store into
+a variable. and that variable pass in setpassword() so that it will show in input field..
+this method we're defing using useCallBack() hook which will optimize the process bcz it store the cache and anytime if
+any changes will happen so it will update..
+
 //useCallback(fn , []) hook   // useCallBack accept one fun() and dependencies(array) on which you want to callback
 
-since we want to update password after every click on Number checkbox or Character checkbox or length so we'll use useCallBack so that
-using this we can update after every actiion .. this is used for optimization the process
+since we want to update password after every click on Number checkbox or Character checkbox or length so useCallBack() hook
+will do this bcz it memorized the process..this will update after every action .. this is used for optimization of process
 
 Step - 4-------- For Generating Password
 
 //useEffect(fn , []) hook   // useEffect also accept one fun() and dependencies...
 
- this is for functionality of Generating password. it has one method passwordGenerator under which logic of Generating
- password is written. and that is written under useCallBack() hook so that perfomance will be optimized..
+here same method passing passwordGenerator so that it will link..
 
+this is for functionality of Generating password. it has one method passwordGenerator under which logic of Generating
+password is written. and inside dependencies having useState Number , Character and length so any time when 
+any change will be happen inside this dependencies then useEffect update this .
 
 Step - 5 ---------------- For copy password into clipboard
 
@@ -43,5 +49,8 @@ Step - 5 ---------------- For copy password into clipboard
  //useRef hook   -- used to take reference of any element
   const passwordRef = useRef(null)
 
-since the copy button having one onClick method copyPasswordToClipboard and inside this using useRef() hook we
-will copy password into clipboard
+since the copy button having one onClick method copyPasswordToClipboard and using this 
+window.navigator.clipboard.writeText(password) we will copy password but for better user experience we'll use useRef() hook
+so that we refer and select that password after clicking on copy button..
+passwordRef.current?.select();   - after copying this will show password as selected
+this reference will pass in input field so that it can link..
