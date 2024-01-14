@@ -36,6 +36,10 @@ function App() {
     passwordRef.current?.select();                     // will check current password has any value or not then select password
     passwordRef.current?.setSelectionRange(0, 10);     // this will select range of password.
     window.navigator.clipboard.writeText(password)     // this will copy password into clipboard
+    document.querySelector('#copyButton').style.backgroundColor = "green"
+    document.querySelector('#msg').innerHTML = "Copied..!"  // after copying password this will show Copied..1
+    //alert('Copied..!')
+    
     }, [password])
 
   //useEffect(fn , []) hook   // useEffect accept one fun() and dependencies..
@@ -46,6 +50,7 @@ function App() {
 
   return (
     <>
+      <div id='msg'></div>    
       <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500">
         <h1 className='text-2xl text-center my-3'>Password Generator</h1>
         <div className="flex shadow rounded-lg overflow-hidden mb-4">
@@ -58,6 +63,7 @@ function App() {
               ref={passwordRef}
             />
             <button
+              id='copyButton'
               onClick={copyPasswordToClipboard}
               className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'> Copy
             </button>
