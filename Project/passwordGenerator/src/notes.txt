@@ -47,7 +47,7 @@ Step - 5 ---------------- For copy password into clipboard
 
  Now define -----------------------
  //useRef hook   -- used to take reference of any element
-  const passwordRef = useRef(null)
+  const passwordRef = useRef(null)    // giving null bcz we don't have any parameter to pass.. you can give as empty as well
 
 since the copy button having one onClick method copyPasswordToClipboard and using this 
 window.navigator.clipboard.writeText(password) we will copy password but for better user experience we'll use useRef() hook
