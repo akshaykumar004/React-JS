@@ -1,0 +1,133 @@
+//------------------------ Day-5 14 Jan 2024 ----------------------------------------
+
+const [color, setColor] = useState("olive");
+
+useState("olive"): This line uses the useState hook, a React hook that allows functional components to manage state. 
+It returns an array with two elements:
+The first element (color) is the current state value. In this case, it is initialized with the string "olive."
+The second element (setColor) is a function that can be used to update the state. When invoked, it triggers a 
+re-render of the component with the new state value.
+
+---------------Now breaking down each CSS properties which are used in bgChanger_Project...
+
+First Div - <div className='w-full h-screen duration-200 flex flex-col items-center justify-center' </div>
+
+w-full            /* Width: 100% of the parent container */
+h-screen          /* Height: 100% of the viewport height (full screen) */
+duration-200      /* Transition duration: 200 milliseconds */
+flex              /* Enable flexbox layout */
+flex-col          /* Set flex container to column direction */
+items-center      /* Center the items horizontally within the flex container */
+justify-center    /* Center the items vertically within the flex container */
+
+w-full: This sets the width of the element to 100% of its parent container. In this case, the div will take up the 
+full width of its parent.
+
+h-screen: This sets the height of the element to 100% of the viewport height, effectively making the div cover the 
+entire screen vertically.
+
+duration-200: This is likely part of a utility class for defining the transition duration. In this case, it sets the 
+transition duration to 200 milliseconds. This is commonly used with CSS transitions to control the speed of animations.
+
+flex: This property enables the flexbox layout model for the div. Flexbox is a powerful layout model in CSS that 
+allows you to design complex layouts more easily.
+
+flex-col: This sets the flex container to a column direction. It means that the child elements inside the flex 
+container will be arranged vertically.
+
+items-center: This centers the child elements horizontally within the flex container. In a flex container with a 
+column direction (flex-col), it centers the items along the horizontal axis.
+
+justify-center: This centers the child elements vertically within the flex container. In a flex container with a 
+column direction (flex-col), it centers the items along the vertical axis.
+
+---<h1> tag --------- <h1 style={{ fontSize: '2rem' }}> ---------
+
+fontSize: '2rem'   /* Font size: 2 times the root element's font size */
+
+fontSize: '2rem': This inline style sets the font size of the element. The value '2rem' specifies a font size of 2 
+times the root element's font size. The rem unit (root em) is relative to the font size of the root element of the 
+document, which is typically the <html> element.
+
+------2nd div ----- <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2"> ------------------
+
+fixed             /* Position: Fixed (relative to the viewport) */
+flex              /* Enable flexbox layout */
+flex-wrap         /* Allow flex container to wrap its items if necessary */
+justify-center    /* Center the items horizontally within the flex container */
+bottom-12         /* Set the bottom position to 12 units from the bottom */
+inset-x-0         /* Set left and right insets to 0 (full width) */
+px-2              /* Add horizontal padding of 2 units */
+
+fixed: This sets the position of the element to be fixed, meaning it will be positioned relative to the viewport 
+and will stay in place even when the page is scrolled.
+
+flex: This property enables the flexbox layout model for the element.
+
+flex-wrap: This allows the flex container to wrap its items onto multiple lines if they can't fit in a single line.
+
+justify-center: This centers the child elements horizontally within the flex container.
+
+bottom-12: This sets the bottom position of the element to be 12 units from the bottom. 
+The actual unit (pixels, rem, etc.) depends on the specific styling framework or CSS setup.
+
+inset-x-0: This sets the left and right insets (padding or margin) to 0, effectively making the element span the 
+full width of its container.
+
+px-2: This adds horizontal padding of 2 units to the element. The actual unit (pixels, rem, etc.) depends on the 
+specific styling framework or CSS setup.
+
+
+----- 3rd  <div className="flex flex-wrap justify-center gap-3 shadow-lg bg-white px-3 py-2 rounded-3xl">  ---------
+
+flex              /* Enable flexbox layout */
+flex-wrap         /* Allow flex container to wrap its items if necessary */
+justify-center    /* Center the items horizontally within the flex container */
+gap-3             /* Set the gap between flex items to a size equivalent to 3 units */
+shadow-lg         /* Apply a large shadow to the element (assuming a shadow utility class) */
+bg-white          /* Set the background color to white */
+px-3              /* Add horizontal padding of 3 units */
+py-2              /* Add vertical padding of 2 units */
+rounded-3xl       /* Apply a rounded border with a large radius (assuming a rounding utility class) */
+
+
+flex: This property enables the flexbox layout model for the element.
+
+flex-wrap: This allows the flex container to wrap its items onto multiple lines if they can't fit in a single line.
+
+justify-center: This centers the child elements horizontally within the flex container.
+
+gap-3: This sets the gap between flex items to a size equivalent to 3 units. The actual unit (pixels, rem, etc.) 
+depends on the specific styling framework or CSS setup.
+
+shadow-lg: This likely applies a large shadow to the element, creating a visual depth effect. The exact appearance 
+of the shadow may vary based on the styling framework or CSS setup being used.
+
+bg-white: This sets the background color of the element to white.
+
+px-3: This adds horizontal padding of 3 units to the element. The actual unit (pixels, rem, etc.) depends on the 
+specific styling framework or CSS setup.
+
+py-2: This adds vertical padding of 2 units to the element. The actual unit (pixels, rem, etc.) depends on the 
+specific styling framework or CSS setup.
+
+rounded-3xl: This likely applies a rounded border with a large radius, creating rounded corners for the element. 
+The "3xl" part suggests a larger radius. The exact radius may vary based on the styling framework or CSS setup.
+
+
+----------- button tag --------------------------
+
+<button onClick={() => setColor("red")}
+    className="outline-none px-4 py-1 rounded-full text-black shadow-lg"
+    style={{backgroundColor: "red"}}> Red
+</button>
+
+className="outline-none px-4 py-1 rounded-full text-black shadow-lg": This sets several CSS classes for styling the 
+button:
+
+outline-none: Removes the default outline that some browsers apply to focused elements.
+px-4: Adds horizontal padding of 4 units.
+py-1: Adds vertical padding of 1 unit.
+rounded-full: Applies a fully rounded border, creating a circular appearance.
+text-black: Sets the text color to black.
+shadow-lg: Applies a large shadow, creating a visual depth effect.
