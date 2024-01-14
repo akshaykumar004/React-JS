@@ -1,0 +1,47 @@
+=============== Password Generator Notes =========================
+
+Step 1 - Create UI ------
+
+create one div under which all code will be return. 
+1- one <h1> tag for heading - Password Generator
+2- create second <div> which will have input type and one button. input type will show Password and button will copy Password
+into clipboard
+3- create 3rd <div> which is having range of password and two checkbox having label with name of Number and Character.
+so that after selecting them password will update including them(Number and Character)
+
+Now UI is done..........
+
+Step -2 - behind the scene----
+
+define 4 useState through which we will work on functionality of Password.
+length , Number , Character and Password
+
+length - default is 6 and max is 10...
+Number - After selecting this checkbox password will update including Number
+Character - After selecting this checkbox password will update including Character
+password - will store password and show through this..
+
+Step - 3-------------- For process optimization
+
+define useCallBack() hook which will Generate password and store into setpassword
+//useCallback(fn , []) hook   // useCallBack accept one fun() and dependencies(array) on which you want to callback
+
+since we want to update password after every click on Number checkbox or Character checkbox or length so we'll use useCallBack so that
+using this we can update after every actiion .. this is used for optimization the process
+
+Step - 4-------- For Generating Password
+
+//useEffect(fn , []) hook   // useEffect also accept one fun() and dependencies...
+
+ this is for functionality of Generating password. it has one method passwordGenerator under which logic of Generating
+ password is written. and that is written under useCallBack() hook so that perfomance will be optimized..
+
+
+Step - 5 ---------------- For copy password into clipboard
+
+ Now define -----------------------
+ //useRef hook   -- used to take reference of any element
+  const passwordRef = useRef(null)
+
+since the copy button having one onClick method copyPasswordToClipboard and inside this using useRef() hook we
+will copy password into clipboard
