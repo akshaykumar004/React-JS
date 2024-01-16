@@ -1,0 +1,16 @@
+================================= Currency Converter ============================
+
+---------------------------------- Step -1 --------- 
+Add tailwind CSS
+create one folder under src folder called hooks and inside that create one file called useCurrency.js (since it is not returning both 
+javaScript and html so extension will be only .js not .jsx)
+
+Inside useCurrency.js - create custom hooks which wil fetch api fo Currency Converter.
+fetch(`https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${currency}.json`)
+here instead of ${currency}, you can give any currency name like usd or inr.. it is just variable name so that during fetching api you can give 
+any currency name according to your requirement...
+exp - https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/inr.json  --- here inr is given instead of ${currency}...
+
+// since this json data is in string format so we've to change into json..
+after using fetch we can do chaining.... exp - .then()
+
