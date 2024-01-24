@@ -1,0 +1,60 @@
+//-------------------- 19 Jan 2024 ------------------------------------
+//------------------ Basic Website using React Router -----------------
+
+Step -1 =======================
+Install tailwind CSS - https://tailwindcss.com/docs/guides/vite
+Install React Router - npm install react-router-dom ----- https://reactrouter.com/en/main/start/tutorial
+
+Step - 2 ====================
+
+Create one Folder components under src - Under that create folder create Folder of web page and their file.jsx
+
+take UI part from UI.md file under src folder 
+
+
+Step - 3 -------------------
+
+Add some functionalities in all the .jsx file.... 
+exp - in NavLink add 'to' which page we're going to access and add more <li> also according to requirement.
+
+In Header -- 
+two type of link is using - 
+Link - this is like <a href /> tag.. but <a /> tag reload the whole page but Link tag dont refresh page. it direclty update using DOM.
+        we use 'to' keyword instaed of href.
+NavLink - this comes with some extra features.. check Header.jsx...
+
+in this we're defining class using callback fun() but why..
+so in web page when we clik on any page so how we'll know which page is active for that we'll use a variable which
+will update and highlight page name.
+Exp - Home, Contact Us, About etc. so when we'll click on Home or any other nav tag it will highlight with color(which you'll define)
+In NavLink also we use 'to' to define on which page we're visiting. it will go and highlight accordingly.
+
+
+So here Header and Footer will be same all the time and only middle element will change...
+
+for this we'll use Outlet method which React provide us. this will execute like below exp -
+
+<Header />       -- this will be same
+<Outlet />      -- this will change only everytime.. since this is in middle so it work like this only.
+<Footer />      -- this will be same
+
+
+to access all this components. in main.jsx -
+we'll use router to call this.
+
+<RouterProvider router={router} />  // here Router ask for one props so we're giving one props calling router(it's just a name)
+
+now we've to create router props so for that we've one method called createBrowserRouter which accept one array.
+createBrowserRouter([])     // like this we define.. under this we create object which will accept path, element and children components
+
+in path - define what you want give after main url like using '/' you want to access next page.. and name of page .. /home , /about etc
+element - define which element you want to access .. <home/> , <about/>
+children - you can declare more object{}.. like above.. giving path element...
+
+there is another way to create router ...........
+
+createBrowserRouter() -- it will be same..
+inside this we have to call this method createRoutesFromElements(
+    under this - <Route path:'' element :{<layout/>} />
+) 
+like this we can provide... also you can do nesting... using this syntax only..
