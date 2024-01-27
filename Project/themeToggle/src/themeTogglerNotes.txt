@@ -1,0 +1,38 @@
+//-------------------------------
+
+Step-1 -------
+
+First create tailwind using tailwind site
+
+under src folder create a file called theme.js .. inside this we'll create context using React.createContext method
+
+inside this context we'll some default value so that during accessing the app it will not crash or anything will not fail
+
+so we'll pass on object and inside this one default lightMode so that app dont crash and two predefined method - darkTheme and lightTheme with data.
+
+Step-2 -------------------
+
+In App.jsx --- wrap all content under ThemeProvider
+now ThemeProvider shaould have some values so that it can implement things so we'll pass all declared 
+method - themeMode , lightTheme , darkTheme
+
+now lightTheme and darkTheme is a method but it is not declared so declare it with same name so that it will take
+automatically all functionality automatically..
+
+///-------- How the theme will change -------------
+
+for this we have to write JS code -- we're using useEffect() call back function and selecting the class of themeMode
+and performing action based on defined action in themeMode
+
+Step-3 ------------
+
+create one folder called components under src and create two jsx file themeBtn and Card 
+
+copy and paste all data from UI.md for UI.....
+
+inside themeBtn import useTheme which we created in theme.js file... and using this call all method themeMode, lightTheme, darkTheme
+
+and on check box for toggle theme.. write some functionality..
+
+
+Note -- add this in tailwind.config.js -- darkMode: "class", then only darkTheme will work after changing to dark...
