@@ -1,0 +1,57 @@
+------------------------ 25-Jan 2024 ----------------------------------
+
+--------- Context API ---------------------------------------
+
+Step-1 ---------
+
+create a folder called context(it could be anything) under src folder.
+inside create a file - UserContext.js
+UserContext - create a method React.createContext() and store into a variable and export that variable so that
+we can use anywhere when we want. also import React from 'react'
+
+Step-2 -----------
+
+UserContext is a provider means in fragment <>..... </> we can write multiple tag and we access that. like this
+we can use UserContext as wrapper and we'll pass like this - <UserContext> ...</UserContext>
+inside this whatever we'll write we can access everything just by calling UserContext.
+so we can say it is working like global variable.
+
+create a file UserContextProvider.jsx under context folder.. import React and UserContext. export this so that we can use later in other files.
+now create a method called UserContextProvider(it could be anything). it accept a element like props,
+it is called children we can give nay name. means whatever value will come it will pass.
+
+inside this call back method we'll pass children in object format. and wrap under <UserContext>
+so here we can see we're using UserContext which is created in first step. but here along with UserContext
+we have to use one property called provider which will provide data but what kind of data this will provide for
+that we'll pass value. so we're passing value in object format. user and setUSer which are created to store data.
+
+Step-3 -------------------
+
+Now call UserContextProvider in App.jsx like wrapper..
+
+inside this wrapper we pass multiple components and will see if it is accessing or not.
+for that  --
+create a folder components under src - under that create two file Login and Profile
+
+Login.jsx --- this section is about How we'll send data.
+import React , UseContext(it is a method just like useState) which will help to fetch context and also UseContext
+create a Login function which will accept two input tag and one button. in button set onClick handle and for that we've to create a method.
+this should be in any parent element otherwise it will error like JSX expressions must have one parent element
+
+we have to call setUSer method from UserContext so that if any user changed any data so he can update.
+so we'll call this method using UseContext method and use this in handleClick method by passing username and password.
+
+Profile.jsx --- this section is about How we'll load/fetch data
+
+Just call the user variable use will fetch data from UserContext and write if else condition like 
+if user loggedIn then print message else give error - Please login
+
+
+
+Step - Final  -- in o/p it is hsowing Pls login because user has not loggedIn yet after login o/p will be 
+Welcome (username)... this is how we use context API.
+
+
+
+
+
