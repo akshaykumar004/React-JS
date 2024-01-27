@@ -15,7 +15,7 @@ function Login() {
     }
     return(
         <div>
-            <input type="text" placeholder="username" className=""
+            <input type="text" placeholder="username"
                 value={username}        // it will take value of username var and after any change it will pass value to setUsername which will update
                 onChange={(e) => setUsername(e.target.value)}/>   
 
@@ -23,7 +23,7 @@ function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
             />
-            <button onClick={handleClick}>Submit</button>
+            <button onClick={handleClick} className="ml-5">Submit</button>
         </div>
     )
 }
