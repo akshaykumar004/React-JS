@@ -1,0 +1,58 @@
+//----------------- Project - TODO at Local Storage ---------------------
+
+Step-1 ----------------------------------
+
+Install ViteProject and Tailwind CSS and follow steps as per given process in website..
+For change background color of body - add bg-color in body tag of index.html file.
+
+Step-2 ------------------------------
+
+create one folder called contexts under src.. inside this folder all context file will be present.
+create one file called TodoContext.js -- inside this create one context using createContext method(this is a object type) 
+and retunr this context into useContext() so that we can easily access.
+also create a provider for this context so that in main file dont need to write .provider method etc..
+
+Inside TodoContext create TODO array which will have one id , todo msg and staus of completion of msg.. and this properties we'll use in below function.
+also write some callback fun which will work for Todo. for exp - 
+addTodo
+updateTodo
+deleteTodo
+toggleTodo --- means check box selection
+
+create a file index.js inside contexts folder. inside this we'll export everything from TodoContext file and whenever will be requirement
+we need to import only index.js so this means we need to import just one file and it will take care of all methods..
+
+Step-3 -----------------
+
+Create a UI.md file for UI for this app..
+
+step-4 ------------------------------
+
+Copy paste App JS UI in app.jsx.. and wrap this code under TodoProvider.
+so TodoProvider will have some values like all method which we defined in TodoContext. addTodo,updateTodo etc..
+
+and then create all this method functionality.. how it will work..
+
+Now all functionality has ended...
+
+
+Step - 4 ------------- Local storage ---------------------
+
+local storage gives value in string format so we have to convert into JSON format for its structure..
+
+using useEffect we'll work on local storage. we're getting value of todos array from local storage and converting into JSON using JSON.parse()
+and storing into a variable.
+
+we're getting value of todos in starting only bcz if it is already created then first it will load from load storage..
+
+
+Step -5 --------------------
+
+create a folder called components and it has three .jsx files - TodoForm , TodoItem , index.js
+
+inside TodoForm - copy paste UI code and do same for TodoItem also..
+
+now for TodoForm - inside this write the functionality of addTodo() which will add todo item... and in form do some changes like onSubmit, value onChange
+this addTodo we can import from useTodo which we're created in TodoContext..
+
+
