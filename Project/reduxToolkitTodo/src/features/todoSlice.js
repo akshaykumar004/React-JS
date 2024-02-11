@@ -24,12 +24,12 @@ export const todoSlice = createSlice({
             state.todos = state.todos.filter((todo) => todo.id !== action.payload);
         },      
 
-        updateTodo: (state, action) => {
-            const todoUpdate = state.todos.find((todo) => todo.id == action.payload)
-            if (todoUpdate) {
-                todoUpdate.text = newText;
-              }
-        }
+        // updateTodo: (state, action) => {
+        //     const todoUpdate = state.todos.find((todo) => todo.id == action.payload)
+        //     if (todoUpdate) {
+        //         todoUpdate.text = newText;
+        //       }
+        // }
     }
 })
 
